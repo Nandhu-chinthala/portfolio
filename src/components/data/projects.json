@@ -14,8 +14,8 @@
     "image": "cardgame.png",
     "description": "A fun and interactive web-based card game collection built with HTML, CSS, and JavaScript.",
     "skills": ["JavaScript", "HTML", "CSS"],
-    "demo": "#",
-    "source": "https://github.com/Nandhu-chinthala/Cards-game"
+    "demo": "https://nandhu-chinthala.github.io/Cards-Game/",
+    "source": "https://github.com/Nandhu-chinthala/Cards-Game"
   },
  {
     "title": "Word Puzzle",
