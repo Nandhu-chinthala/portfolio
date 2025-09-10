@@ -1,0 +1,37 @@
+[
+  {
+   "title":"DineSphere",
+    "image":"dine.png",
+    "description":"DineSphere  A MERN stack web app for easy restaurant table reservations with a clean user interface.",
+    "skills":["MERN stack"],
+    "demo":"https://nandhu-chinthala.github.io/Restuarant-Reservation-Using-MERN/",
+    "source":"https://github.com/Nandhu-chinthala/Restuarant-Reservation-Using-MERN"
+
+},
+  
+  {
+    "title": "Cards Game",
+    "image": "cardgame.png",
+    "description": "A fun and interactive web-based card game collection built with HTML, CSS, and JavaScript.",
+    "skills": ["JavaScript", "HTML", "CSS"],
+    "demo": "#",
+    "source": "https://github.com/Nandhu-chinthala/Cards-game"
+  },
+ {
+    "title": "Word Puzzle",
+    "image": "wordgame.png",
+    "description": "A fun and interactive word puzzle designed to challenge your vocabulary skills.",
+    "skills": ["JavaScript", "HTML", "CSS"],
+    "demo": "#",
+    "source": "https://github.com/Nandhu-chinthala/wordgame"
+  },
+ {
+    "title":"SnakeAndLadder",
+    "image":"snake.png",
+    "description":" A classic board game where players climb ladders and dodge snakes to reach the finish.",
+    "skills":["Java"],
+    "demo":"#",
+    "source":"https://github.com/Nandhu-chinthala/Java-Project"
+
+}
+]
