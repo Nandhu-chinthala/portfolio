@@ -33,7 +33,7 @@ const ProjectCard = ({ Project: { title, image, description, demo, source }, ind
       <div className={styles.imageWrapper}>
         <img
           src={getImageUrl(image)}
-          alt={`${title} project`}
+          alt={title}
           className={styles.image}
         />
         <div className={styles.overlay}>

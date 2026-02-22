@@ -12,9 +12,9 @@ const Projects = () => {
           Here are some of my recent projects that showcase my skills and experience
         </p>
         <div className={styles.projectsGrid}>
-          {projects.map((Project, id) => {
-            return <ProjectCard key={id} Project={Project} index={id} />;
-          })}
+          {projects.map((Project, id) => (
+            <ProjectCard key={id} Project={Project} index={id} />
+          ))}
         </div>
       </div>
     </section>
