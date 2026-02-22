@@ -1,94 +1,528 @@
-#skills{
-    overflow: hidden;
-    width: 100vw;
-    max-width: 65rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+#skills {
+  width: 100%;
+  background: #0B1220;
+  padding: 96px 2rem;
+  box-sizing: border-box;
+  margin: 0;
 }
-.skillTitle{
-    font-size: 3rem;
-    font-weight: 600;
-    padding-top: 3rem;
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subsection-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(11, 18, 32, 0.6);
+  border: 1px solid rgba(255, 106, 61, 0.2);
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  text-align: center;
+  min-width: 180px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+
+.stat-card.from-left {
+  transform: translateX(-80px);
+}
+
+.stat-card.from-right {
+  transform: translateX(80px);
+}
+
+.stat-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-card:hover {
+  border-color: #FF6A3D;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(255, 106, 61, 0.3);
+}
+
+.stat-card.visible:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.stat-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #FF6A3D;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tech Stack - Inline with Icons */
+.tech-stack-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto 64px;
+  padding: 2rem 0;
+}
+
+.tech-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.tech-icon-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tech-icon {
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-icon-item:hover .tech-icon {
+  color: #FF6A3D;
+  transform: translateY(-8px) scale(1.2);
+  filter: drop-shadow(0 10px 20px rgba(255, 106, 61, 0.4));
+}
+
+.tech-icon-item:hover .tech-name {
+  color: #FF6A3D;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tech-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 106, 61, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.15s ease;
+}
+
+.tech-item:hover {
+  background: rgba(255, 106, 61, 0.1);
+  border-color: rgba(255, 106, 61, 0.3);
+  color: #FF6A3D;
+}
+
+/* Services Section */
+.services-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: rgba(11, 18, 32, 0.6);
+  border: 1px solid rgba(255, 106, 61, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+
+.service-card.from-left {
+  transform: translateX(-80px);
+}
+
+.service-card.from-right {
+  transform: translateX(80px);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover {
+  border-color: #FF6A3D;
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px -12px rgba(255, 106, 61, 0.25);
+}
+
+.service-card.visible:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+.service-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 106, 61, 0.1);
+  border: 1px solid rgba(255, 106, 61, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-icon-svg {
+  color: #FF6A3D;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  border-color: #FF6A3D;
+  box-shadow: 0 20px 40px -10px rgba(255, 106, 61, 0.2);
+}
+
+.service-card:hover .service-icon-wrapper {
+  border-color: #FF6A3D;
+  background: rgba(255, 106, 61, 0.2);
+}
+
+.service-card:hover .service-icon-svg {
+  transform: rotate(360deg);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .tech-stack-inline {
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #skills {
+    padding: 80px 2rem;
+  }
+  
+  .section-title {
+    font-size: 42px;
+  }
+  
+  .about-section {
+    margin-bottom: 60px;
+  }
+  
+  .stats-container {
+    gap: 1.25rem;
+  }
+  
+  .stat-card {
+    padding: 1.75rem 2.5rem;
+    min-width: 160px;
+  }
+  
+  .stat-number {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #skills {
+    padding: 64px 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 2rem;
+  }
+  
+  .subsection-title {
+    font-size: 20px;
+  }
+  
+  .about-text {
+    font-size: 15px;
+  }
+  
+  .stats-container {
+    gap: 1rem;
+    padding: 0 20px;
+  }
+  
+  .stat-card {
+    padding: 1.25rem 1.75rem;
+    min-width: 130px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+  }
+  
+  .service-card p {
+    font-size: 14px;
+  }
+  
+  .service-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .tech-stack-inline {
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tech-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #skills {
+    padding: 48px 1rem;
+  }
+  
+  .section-title {
+    font-size: 28px;
     margin-bottom: 1.5rem;
-    
+  }
+  
+  .subsection-title {
+    font-size: 18px;
+  }
+  
+  .about-section {
+    margin-bottom: 48px;
+  }
+  
+  .about-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .stats-container {
+    gap: 0.75rem;
+  }
+  
+  .stat-card {
+    padding: 1rem 1.25rem;
+    min-width: 100px;
+    flex: 1;
+  }
+  
+  .stat-number {
+    font-size: 24px;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .services-grid {
+    gap: 1rem;
+  }
+  
+  .service-card {
+    padding: 1.25rem;
+  }
+  
+  .service-card h3 {
+    font-size: 18px;
+  }
+  
+  .service-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-stack-inline {
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+  
+  .tech-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .tech-name {
+    font-size: 0.75rem;
+  }
+  
+  .tech-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
-.skillDiscri{
-    font-weight:300 ;
-    font-size: 1.2rem;
-    max-width: 50rem;
-    padding: 0 2rem;
+
+@media screen and (max-width: 375px) {
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .stat-card {
+    padding: 0.875rem 1rem;
+    min-width: 90px;
+  }
+  
+  .stat-number {
+    font-size: 22px;
+  }
 }
-.skillBars{
-    margin:1.5rem ;
-    width: 100vw;
-    max-width:80% ;
-    text-align: left;
 
-
-}
-.skillbar{
-    display: flex;
-    margin: 0.5rem;
-    padding: 1rem 1rem;
-    border-radius: 1.5rem;
-    background: rgb(50,50,50);
-}
-.skillBarImg{
-    object-fit: cover;
-    height: 4rem;
-    width: 4rem;
-    margin: 2rem;
-}
-.skillBarText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.skillBarText>p{
-    font-size: 0.9rem;
-    font-weight: 200;
-
-}
-@media screen and (max-width:720px) {
-    .skillBarText>p{
-        font-size: 5vw;
-    }
-
-    
-}
-@media screen and (max-width:480px) {
-    .skillDiscri{
-    font-weight:300 ;
-    font-size: 1rem;
-    max-width: 40rem;
-    padding: 0 3rem;
-}
-    .skillBars{
-    margin:0.5rem ;
-    width: 100vw;
-    max-width:98% ;
-
-
-
-}
-    .skillBarText>p{
-        font-size: 5vw;
-    }
-    .skillBarImg{
-        height: 3.25rem;
-        width: 3.25rem;
-    }
-    .skillBarText>h2{
-        font-size: 8vw;
-
-    }
-
-
-    
-    
+@media screen and (max-width: 320px) {
+  #skills {
+    padding: 40px 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .subsection-title {
+    font-size: 16px;
+  }
+  
+  .about-text {
+    font-size: 13px;
+  }
+  
+  .stat-card {
+    padding: 0.75rem 1rem;
+    min-width: 80px;
+  }
+  
+  .stat-number {
+    font-size: 20px;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .service-card {
+    padding: 1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 16px;
+  }
+  
+  .service-card p {
+    font-size: 13px;
+  }
+  
+  .tech-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .tech-name {
+    font-size: 0.7rem;
+  }
 }
 
 

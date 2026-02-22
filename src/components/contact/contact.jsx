@@ -1,16 +1,15 @@
-
-import React, { useRef} from 'react';
+import React, { useRef, useState } from 'react';
 import './contact.css';
-import facebookicon from "../../assets/facebook-icon.png";
-import instagramicon from "../../assets/instagram.png";
-import  youtubeicon from "../../assets/youtube.png";
-import tiwtericon from "../../assets/twitter.png";
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
- const form = useRef();
-const sendEmail = (e) => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const sendEmail = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     emailjs
       .sendForm('service_tqhydfs', 'template_k32y1nc', form.current, {
@@ -18,36 +17,82 @@ const sendEmail = (e) => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setSubmitStatus('success');
+          form.current.reset();
+          setTimeout(() => setSubmitStatus(null), 5000);
         },
         (error) => {
+          setSubmitStatus('error');
           console.log('FAILED...', error.text);
         },
-      );
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
+
   return (
-    <section id="Contact">
-        <div id="contact">
-            <h1 className="title">Contact Me</h1>
-            <span className="contactdesc">Please fill out the from bellow to discuss any work opportunities.</span>
-            <form className="contactfrom" ref={form}  onSubmit={sendEmail}>
-                <input type="text" className="name" placeholder="your name" name="your_name"/>
-                <input type="email" className="email" placeholder="your email" name="your_email"/>
-                <textarea name="massage" rows="5" placeholder="your massage" className="massage"  ></textarea>
-                <button type="submit" value="send" className="submitbtn" >Submit</button>
-                <div className="links">
-                     <img src={facebookicon} alt="facebooklink" className="link"/>
-                     <img src={tiwtericon} alt="tiwterlink" className="link"/>
-                     <img src={youtubeicon} alt="youtubelink" className="link"/>
-                     <img src={instagramicon} alt="instagramlink" className="link"/>
-      
-                </div>
-            </form>
-
-        </div>
-
+    <section id="Contact" className="contact-section">
+      <div className="contact-container">
+        <h2 className="contact-title">Contact</h2>
+        <p className="contact-subtitle">
+          Have a project in mind? Let's work together to bring your ideas to life.
+        </p>
+        
+        <form className="contact-form" ref={form} onSubmit={sendEmail}>
+          <div className="form-group">
+            <label htmlFor="from_name">Name</label>
+            <input 
+              type="text" 
+              id="from_name"
+              className="form-input" 
+              placeholder="Your name" 
+              name="from_name"
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="from_email">Email</label>
+            <input 
+              type="email" 
+              id="from_email"
+              className="form-input" 
+              placeholder="Your email" 
+              name="from_email"
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea 
+              id="message"
+              name="message" 
+              rows="5" 
+              placeholder="Your message" 
+              className="form-textarea"
+              required
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            className="submit-btn"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </button>
+          
+          {submitStatus === 'success' && (
+            <p className="status-message success">Message sent successfully!</p>
+          )}
+          {submitStatus === 'error' && (
+            <p className="status-message error">Failed to send message. Please try again.</p>
+          )}
+        </form>
+      </div>
     </section>
- 
   );
 }
 
