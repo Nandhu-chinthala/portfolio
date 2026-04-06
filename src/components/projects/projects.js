@@ -4,6 +4,9 @@ import projects from "../data/projects.json";
 import ProjectCard from "./projectCard.js"
 
 const Projects = () => {
+  console.log('Projects loaded:', projects);
+  console.log('Number of projects:', projects.length);
+  projects.forEach((p, i) => console.log(`Project ${i}:`, p.title));
   return (
     <section id="Projects" className={styles.projectsSection}>
       <div className={styles.container}>

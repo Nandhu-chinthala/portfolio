@@ -8,6 +8,14 @@
     "source":"https://github.com/Nandhu-chinthala/Restuarant-Reservation-Using-MERN"
 
 },
+ {
+    "title": "Movie Ticket Booking",
+    "image": "movie.png",
+    "description": "A movie ticket booking web application that allows users to browse movies, view show timings, and book tickets seamlessly. Built with a responsive UI and smooth user experience.",
+    "skills": ["MERN stack"],
+    "demo": "https://hanvitech-app.onrender.com/",
+    "source": "https://github.com/Nandhu-chinthala/Hanvitech"
+  },
   
   {
     "title": "Cards Game",

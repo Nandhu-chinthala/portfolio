@@ -56,7 +56,7 @@ const Skills = () => {
   const stats = [
     { number: '4+', label: 'Completed Projects' },
     { number: '95%', label: 'Client Satisfaction' },
-    { number: '2+', label: 'Years Experience' }
+    { number: '1+', label: 'Years of Hands-on Experience' }
   ];
 
   const services = [
